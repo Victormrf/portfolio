@@ -27,7 +27,7 @@ const workExperienceData: WorkExperienceItem[] = [
 const WorkExperience = () => {
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-bold">WorkExperience</h1>
+      <h1 className="text-2xl font-bold">Work Experience</h1>
       <div className="p-1">
         <ol className="relative border-s border-gray-200 dark:border-gray-700">
           {workExperienceData.map((item, index) => (

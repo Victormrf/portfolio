@@ -12,7 +12,9 @@ const Intro = () => {
           from scratch to production-ready. I have experience working with
           relational and non-relational databases. I also hold a degree in
           electrical engineering, and currently am a post graduate student in
-          software engineering.
+          software engineering. As a software development enthusiast, I&apos;m
+          always looking to acquire new knowledge in the field and develop new
+          technical skills.
         </p>
       </div>
       <div className="w-3/12 flex-1">
