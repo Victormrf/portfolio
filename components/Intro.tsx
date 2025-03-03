@@ -5,12 +5,14 @@ const Intro = () => {
   return (
     <div className="flex gap-4">
       <div className="flex flex-col gap-4 w-9/12">
-        <h1 className="text-4xl font-bold">Hi! I&apos;m Yatharth.</h1>
+        <h1 className="text-4xl font-bold">Hi! I&apos;m Victor.</h1>
         <p className="text-base text-gray-700">
-          Seasoned Fullstack Engineer with 4+ years in startups. I excel in
-          building applications from scratch to production-ready. My expertise
-          spans across frontend, backend, and full-stack development, with a
-          knack for system design and scalability.
+          As a Software Engineer with 2+ years of experience, i have crafted
+          solutions for backend and frontend development, creating applications
+          from scratch to production-ready. I have experience working with
+          relational and non-relational databases. I also hold a degree in
+          electrical engineering, and currently am a post graduate student in
+          software engineering.
         </p>
       </div>
       <div className="w-3/12 flex-1">
