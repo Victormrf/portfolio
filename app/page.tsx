@@ -1,3 +1,4 @@
+import ContactMe from "@/components/ContactMe";
 import Education from "@/components/Education";
 import Intro from "@/components/Intro";
 import { Meteors } from "@/components/magicui/meteors";
@@ -15,6 +16,7 @@ export default function Home() {
         <Education />
         <Skills />
         <Projects />
+        <ContactMe />
       </main>
     </div>
   );
