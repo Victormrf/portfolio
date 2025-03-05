@@ -53,7 +53,7 @@ const Projects = () => {
       <div className="grid grid-cols-2 gap-4">
         {projectsData?.map((item, index) => (
           <div
-            className="flex flex-col border border-gray-100 rounded-md"
+            className="flex flex-col border border-gray-100  dark:border-gray-800 rounded-md"
             key={index}
           >
             <Image

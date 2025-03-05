@@ -6,7 +6,7 @@ const Intro = () => {
     <div className="flex gap-4">
       <div className="flex flex-col gap-4 w-9/12">
         <h1 className="text-4xl font-bold">Hi! I&apos;m Victor.</h1>
-        <p className="text-base text-gray-700">
+        <p className="text-base text-gray-700 dark:text-gray-300">
           As a Software Engineer with 2+ years of experience, i have crafted
           solutions for backend and frontend development, creating applications
           from scratch to production-ready. I have experience working with

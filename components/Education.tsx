@@ -19,7 +19,7 @@ const educationData: EducationItem[] = [
   {
     startDate: "November 2024",
     endDate: "Present",
-    collegeName: "Pontifical Catholic University of Minas Gerais (PUC-MG)",
+    collegeName: "Pontifical Catholic University of Minas Gerais (PUC Minas)",
     courseName: "Software Engineering",
     courseType: "Post-graduation",
     address: "Belo Horizonte, Minas Gerais, Brazil.",
@@ -42,7 +42,9 @@ const Education = () => {
                 {item.courseName} at {item.collegeName}
               </h3>
               <h5 className="text-sm text-gray-400">{item.courseType}</h5>
-              <h4 className="text-base text-gray-700">{item.address}</h4>
+              <h4 className="text-base text-gray-700 dark:text-gray-300">
+                {item.address}
+              </h4>
             </li>
           ))}
         </ol>

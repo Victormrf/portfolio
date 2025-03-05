@@ -31,7 +31,7 @@ const Skills = () => {
         {skillsData.map((skill, index) => (
           <div
             key={index}
-            className="flex border border-gray-200 rounded-md px-2 py-1 text-sm bg-gray-500 text-white"
+            className="flex border border-gray-200 dark:border-gray-800 rounded-md px-2 py-1 text-sm bg-gray-500 text-white"
           >
             {skill}
           </div>
