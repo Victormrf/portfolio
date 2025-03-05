@@ -9,7 +9,7 @@ import {
   Sun,
 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // import { ModeToggle } from "@/components/mode-toggle";
 import { buttonVariants } from "@/components/ui/button";
@@ -107,10 +107,41 @@ export function CustomDock({
   orientation: "vertical" | "horizontal";
 }) {
   const { resolvedTheme, setTheme } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 768);
+    setMounted(true);
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
-    <div className="fixed left-40 top-1/2 bottom-1/2 flex items-center justify-center">
+    <div
+      className={
+        isMobile
+          ? "fixed left-1/2 right-1/2 bottom-5 flex items-center justify-center"
+          : "fixed left-40 top-1/2 bottom-1/2 flex items-center justify-center"
+      }
+    >
       <TooltipProvider>
-        <Dock direction="middle" orientation={orientation}>
+        <Dock
+          direction="middle"
+          orientation={isMobile ? "horizontal" : orientation}
+        >
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>
@@ -132,7 +163,10 @@ export function CustomDock({
               </Tooltip>
             </DockIcon>
           ))}
-          <Separator orientation="horizontal" className="h-full" />
+          <Separator
+            orientation={isMobile ? "vertical" : "horizontal"}
+            className="h-full"
+          />
           {Object.entries(DATA.contact.social).map(([name, social]) => (
             <DockIcon key={name}>
               <Tooltip>
@@ -154,20 +188,25 @@ export function CustomDock({
               </Tooltip>
             </DockIcon>
           ))}
-          <Separator orientation="horizontal" className="h-full" />
+          <Separator
+            orientation={isMobile ? "vertical" : "horizontal"}
+            className="h-full"
+          />
           <DockIcon>
             <Tooltip>
               <TooltipTrigger asChild>
-                <div className="size-12 rounded-full flex items-center justify-center">
+                <button
+                  onClick={() =>
+                    setTheme(resolvedTheme === "light" ? "dark" : "light")
+                  }
+                  className="size-12 rounded-full flex items-center justify-center"
+                >
                   {resolvedTheme === "light" ? (
-                    <Sun className="size-4" onClick={() => setTheme("dark")} />
+                    <Sun className="size-4" />
                   ) : (
-                    <Moon
-                      className="size-4"
-                      onClick={() => setTheme("light")}
-                    />
+                    <Moon className="size-4" />
                   )}
-                </div>
+                </button>
               </TooltipTrigger>
               <TooltipContent>
                 <p>Theme</p>

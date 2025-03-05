@@ -3,8 +3,8 @@ import ProfilePic from "@/app/images/profile_picture.jpg";
 
 const Intro = () => {
   return (
-    <div className="flex gap-4">
-      <div className="flex flex-col gap-4 w-9/12">
+    <div className="flex gap-4 flex-col-reverse sm:flex-row justify-center items-center">
+      <div className="flex flex-col gap-4 md:w-9/12 sm:w-full">
         <h1 className="text-4xl font-bold">Hi! I&apos;m Victor.</h1>
         <p className="text-base text-gray-700 dark:text-gray-300">
           As a Software Engineer with 2+ years of experience, i have crafted
@@ -17,7 +17,7 @@ const Intro = () => {
           technical skills.
         </p>
       </div>
-      <div className="w-3/12 flex-1">
+      <div className="md:w-3/12 sm:w-full">
         <Image
           src={ProfilePic}
           alt="Yatharth"
