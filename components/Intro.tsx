@@ -8,7 +8,7 @@ const Intro = () => {
         <h1 className="text-4xl font-bold text-teal-800 dark:text-teal-300">
           Hi! I&apos;m Victor.
         </h1>
-        <p className="text-base text-teal-900 dark:text-gray-100">
+        <p className="text-base text-gray-800 dark:text-gray-100">
           As a Software Engineer with 2+ years of experience, i have crafted
           solutions for backend and frontend development, creating applications
           from scratch to production-ready. I have experience working with
