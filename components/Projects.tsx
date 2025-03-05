@@ -49,7 +49,6 @@ const projectsData: Project[] = [
 const Projects = () => {
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-bold">Projects</h1>
       <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4">
         {projectsData?.map((item, index) => (
           <div
@@ -64,13 +63,17 @@ const Projects = () => {
               className="w-full h-full rounded-t-md"
             />
             <div className="flex flex-col gap-3 p-4">
-              <h2 className="text-ls font-bold">{item.title}</h2>
-              <p className="text-base text-gray-500">{item.description}</p>
+              <h2 className="text-ls font-bold text-teal-800 dark:text-teal-300">
+                {item.title}
+              </h2>
+              <p className="text-base text-teal-800 dark:text-gray-100">
+                {item.description}
+              </p>
               <div className="flex gap-1 flex-wrap">
                 {item.technologies.map((tech, index) => (
                   <div
                     key={index}
-                    className="flex border border-gray-200 rounded-md px-2 py-1 text-sm bg-gray-200 text-gray-800"
+                    className="flex border border-teal-800 dark:border-teal-300 rounded-md px-2 py-1 text-sm bg-gray-200 dark:bg-cyan-900 text-teal-800 dark:text-teal-300"
                   >
                     {tech}
                   </div>

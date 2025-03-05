@@ -141,6 +141,7 @@ export function CustomDock({
         <Dock
           direction="middle"
           orientation={isMobile ? "horizontal" : orientation}
+          className="border-teal-600/50 dark:border-teal-500/50"
         >
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
@@ -151,10 +152,10 @@ export function CustomDock({
                     aria-label={item.label}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full hover:text-teal-500 dark:hover:text-teal-400"
                     )}
                   >
-                    <item.icon className="size-4" />
+                    <item.icon className="size-4 text-teal-600 dark:text-teal-500" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -165,7 +166,7 @@ export function CustomDock({
           ))}
           <Separator
             orientation={isMobile ? "vertical" : "horizontal"}
-            className="h-full"
+            className="h-full bg-teal-600/50 dark:bg-teal-500/50"
           />
           {Object.entries(DATA.contact.social).map(([name, social]) => (
             <DockIcon key={name}>
@@ -176,10 +177,10 @@ export function CustomDock({
                     aria-label={social.name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full"
+                      "size-12 rounded-full hover:text-teal-500 dark:hover:text-teal-400"
                     )}
                   >
-                    <social.icon className="size-4" />
+                    <social.icon className="size-4 text-teal-600 dark:text-teal-500" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -190,7 +191,7 @@ export function CustomDock({
           ))}
           <Separator
             orientation={isMobile ? "vertical" : "horizontal"}
-            className="h-full"
+            className="h-full bg-teal-600/50 dark:bg-teal-500/50"
           />
           <DockIcon>
             <Tooltip>
@@ -199,12 +200,12 @@ export function CustomDock({
                   onClick={() =>
                     setTheme(resolvedTheme === "light" ? "dark" : "light")
                   }
-                  className="size-12 rounded-full flex items-center justify-center"
+                  className="size-12 rounded-full flex items-center justify-center hover:text-teal-500 dark:hover:text-teal-400"
                 >
                   {resolvedTheme === "light" ? (
-                    <Sun className="size-4" />
+                    <Sun className="size-4 text-teal-600 dark:text-teal-500" />
                   ) : (
-                    <Moon className="size-4" />
+                    <Moon className="size-4 text-teal-600 dark:text-teal-500" />
                   )}
                 </button>
               </TooltipTrigger>

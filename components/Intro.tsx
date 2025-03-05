@@ -5,8 +5,10 @@ const Intro = () => {
   return (
     <div className="flex gap-4 flex-col-reverse sm:flex-row justify-center items-center">
       <div className="flex flex-col gap-4 md:w-9/12 sm:w-full">
-        <h1 className="text-4xl font-bold">Hi! I&apos;m Victor.</h1>
-        <p className="text-base text-gray-700 dark:text-gray-300">
+        <h1 className="text-4xl font-bold text-teal-800 dark:text-teal-300">
+          Hi! I&apos;m Victor.
+        </h1>
+        <p className="text-base text-teal-900 dark:text-gray-100">
           As a Software Engineer with 2+ years of experience, i have crafted
           solutions for backend and frontend development, creating applications
           from scratch to production-ready. I have experience working with
@@ -23,7 +25,7 @@ const Intro = () => {
           alt="Yatharth"
           width={160}
           height={160}
-          className="rounded-full border border-gray-100 h-36 w-36"
+          className="rounded-full border h-36 w-36"
         />
       </div>
     </div>
