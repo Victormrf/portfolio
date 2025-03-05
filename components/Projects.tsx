@@ -65,7 +65,7 @@ const Projects = () => {
             />
             <div className="flex flex-col gap-3 p-4">
               <h2 className="text-ls font-bold">{item.title}</h2>
-              <p className="text-sm text-gray-500">{item.description}</p>
+              <p className="text-base text-gray-500">{item.description}</p>
               <div className="flex gap-1 flex-wrap">
                 {item.technologies.map((tech, index) => (
                   <div

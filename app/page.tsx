@@ -1,4 +1,5 @@
 import ContactMe from "@/components/ContactMe";
+import { CustomDock } from "@/components/CustomDock";
 import Education from "@/components/Education";
 import Intro from "@/components/Intro";
 import { Meteors } from "@/components/magicui/meteors";
@@ -17,6 +18,7 @@ export default function Home() {
         <Skills />
         <Projects />
         <ContactMe />
+        <CustomDock orientation="horizontal" />
       </main>
     </div>
   );
