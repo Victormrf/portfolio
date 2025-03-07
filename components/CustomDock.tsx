@@ -5,7 +5,7 @@ import {
   HomeIcon,
   MailIcon,
   Moon,
-  PencilIcon,
+  // PencilIcon,
   Sun,
 } from "lucide-react";
 import Link from "next/link";
@@ -73,28 +73,28 @@ const Icons = {
 const DATA = {
   navbar: [
     { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: PencilIcon, label: "Blog" },
+    // { href: "#", icon: PencilIcon, label: "Blog" },
   ],
   contact: {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "#",
+        url: "https://github.com/Victormrf",
         icon: Icons.github,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "#",
+        url: "https://www.linkedin.com/in/victor-manuel-fernandes/",
         icon: Icons.linkedin,
       },
-      X: {
-        name: "X",
-        url: "#",
-        icon: Icons.x,
-      },
+      // X: {
+      //   name: "X",
+      //   url: "#",
+      //   icon: Icons.x,
+      // },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:vmrf2000@hotmail.com",
         icon: Icons.email,
       },
     },

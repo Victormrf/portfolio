@@ -13,11 +13,11 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: "Test Project",
+    title: "Natours",
     description: "This is still in development...",
-    link: "https://vercel.com/",
-    code: "https://github.com/Victormrf",
-    previewImage: "/images/WebDevelopmentProjects2.png",
+    link: "https://natours-victormrf.vercel.app/",
+    code: "https://github.com/Victormrf/natours",
+    previewImage: "/images/natours_preview.png",
     technologies: ["Nest.js", "TypeScript", "Next.js", "React", "Tailwind CSS"],
   },
   {
@@ -52,7 +52,7 @@ const Projects = () => {
       <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-4">
         {projectsData?.map((item, index) => (
           <div
-            className="flex flex-col border border-gray-100  dark:border-gray-800 rounded-md"
+            className="flex flex-col border hover:shadow-md border-gray-100  dark:border-gray-800 rounded-md"
             key={index}
           >
             <Image
