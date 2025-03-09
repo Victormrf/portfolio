@@ -7,9 +7,14 @@ import Projects from "./Projects";
 import ContactMe from "./ContactMe";
 
 const CustomTab = () => {
-  const [activeTab, setActiveTab] = useState("experience");
+  const [activeTab, setActiveTab] = useState("projects");
 
   const tabs = [
+    {
+      id: "projects",
+      label: "Projects",
+      content: <Projects />,
+    },
     {
       id: "experience",
       label: "Work Experience",
@@ -19,11 +24,6 @@ const CustomTab = () => {
       id: "education",
       label: "Education",
       content: <Education />,
-    },
-    {
-      id: "projects",
-      label: "Projects",
-      content: <Projects />,
     },
     {
       id: "contacts",
