@@ -57,11 +57,11 @@ export function Marquee({
           const newOffset = prev + step;
           const contentWidth = containerRef.current?.scrollWidth || 0;
 
-          // Reset based on direction
+          // Instead of resetting immediately, check if we've gone past the full content width
           if (reverse) {
-            return newOffset >= contentWidth ? 0 : newOffset;
+            return Math.abs(newOffset) >= contentWidth ? 0 : newOffset;
           } else {
-            return newOffset <= -contentWidth ? 0 : newOffset;
+            return Math.abs(newOffset) >= contentWidth ? 0 : newOffset;
           }
         });
       };
@@ -69,23 +69,22 @@ export function Marquee({
       const interval = setInterval(animate, 20);
       return () => clearInterval(interval);
     }
-  }, [isDragging, pauseOnHover, isHovered, reverse]);
+  }, [isDragging, pauseOnHover, isHovered, reverse, repeat]);
 
   const bind = useDrag(
     ({ active, movement: [x], first }) => {
       setIsDragging(active);
 
       if (first) {
-        // Capture the current position when starting drag
         const currentX = baseOffset + dragOffset;
         setBaseOffset(currentX);
         setDragOffset(0);
       }
 
       if (active) {
-        setDragOffset(x);
+        const contentWidth = containerRef.current?.scrollWidth || 0;
+        setDragOffset(x % contentWidth); // Allow full content width dragging
       } else {
-        // When drag ends, add dragOffset to baseOffset
         setBaseOffset((prev) => prev + dragOffset);
         setDragOffset(0);
       }
@@ -114,7 +113,7 @@ export function Marquee({
         className
       )}
     >
-      {Array(repeat)
+      {Array(repeat * 2) // Double the repeat to ensure smooth transition
         .fill(0)
         .map((_, i) => (
           <div
@@ -123,7 +122,10 @@ export function Marquee({
               transform: `translateX(${totalOffset}px)`,
               transition: isDragging ? "none" : "transform 0.05s linear",
             }}
-            className={cn("flex shrink-0 justify-around [gap:var(--gap)]")}
+            className={cn(
+              "flex shrink-0 justify-around [gap:var(--gap)]",
+              "will-change-transform"
+            )}
           >
             {children}
           </div>

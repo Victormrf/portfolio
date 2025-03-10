@@ -1,0 +1,68 @@
+import { Project } from "@/types/project";
+
+export const projectsData: Project[] = [
+  {
+    title: "Natours",
+    description: "This is still in development...",
+    link: "https://natours-victormrf.vercel.app/",
+    code: "https://github.com/Victormrf/natours",
+    previewImage: "/images/natours_preview.png",
+    technologies: ["Nest.js", "TypeScript", "Next.js", "React", "Tailwind CSS"],
+  },
+  {
+    title: "Test Project",
+    description: "This is still in development...",
+    link: "https://vercel.com/",
+    code: "https://github.com/Victormrf",
+    previewImage: "/images/natours_preview.png",
+    technologies: ["Nest.js", "TypeScript", "Next.js", "React", "Tailwind CSS"],
+  },
+  {
+    title: "Test Project",
+    description: "This is still in development...",
+    link: "https://vercel.com/",
+    code: "https://github.com/Victormrf",
+    previewImage: "/images/natours_preview.png",
+    technologies: ["Nest.js", "TypeScript", "Next.js", "React", "Tailwind CSS"],
+  },
+  {
+    title: "Test Project",
+    description: "This is still in development...",
+    link: "https://vercel.com/",
+    code: "https://github.com/Victormrf",
+    previewImage: "/images/natours_preview.png",
+    technologies: ["Nest.js", "TypeScript", "Next.js", "React", "Tailwind CSS"],
+  },
+  {
+    title: "Test Project",
+    description: "This is still in development...",
+    link: "https://vercel.com/",
+    code: "https://github.com/Victormrf",
+    previewImage: "/images/natours_preview.png",
+    technologies: ["Nest.js", "TypeScript", "Next.js", "React", "Tailwind CSS"],
+  },
+  {
+    title: "Test Project",
+    description: "This is still in development...",
+    link: "https://vercel.com/",
+    code: "https://github.com/Victormrf",
+    previewImage: "/images/natours_preview.png",
+    technologies: ["Nest.js", "TypeScript", "Next.js", "React", "Tailwind CSS"],
+  },
+  {
+    title: "Test Project",
+    description: "This is still in development...",
+    link: "https://vercel.com/",
+    code: "https://github.com/Victormrf",
+    previewImage: "/images/natours_preview.png",
+    technologies: ["Nest.js", "TypeScript", "Next.js", "React", "Tailwind CSS"],
+  },
+  {
+    title: "Test Project",
+    description: "This is still in development...",
+    link: "https://vercel.com/",
+    code: "https://github.com/Victormrf",
+    previewImage: "/images/natours_preview.png",
+    technologies: ["Nest.js", "TypeScript", "Next.js", "React", "Tailwind CSS"],
+  },
+];
