@@ -1,9 +1,9 @@
-import { CustomMarquee } from "./CustomMarquee";
+import { ProjectsMarquee } from "./ProjectsMarquee";
 
 const Projects = () => {
   return (
     <div className="flex flex-col gap-4">
-      <CustomMarquee />
+      <ProjectsMarquee />
     </div>
   );
 };
