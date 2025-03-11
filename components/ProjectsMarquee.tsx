@@ -31,7 +31,7 @@ const ProjectCard = ({
           height={400}
           className="w-full rounded-lg"
         />
-        <div className="flex gap-1 flex-wrap">
+        <div className="flex gap-1 flex-wrap mt-4">
           {technologies.map((tech, index) => (
             <div
               key={index}
@@ -41,17 +41,21 @@ const ProjectCard = ({
             </div>
           ))}
         </div>
-        <p>{description}</p>
-        <div className="flex gap-2 mt-2">
-          <Link href={link}>
-            <Button variant="default">View</Button>
-          </Link>
-          <Link href={code}>
-            <Button variant="outline">Code</Button>
-          </Link>
-        </div>
+        <p className="mt-4 text-gray-700 dark:text-gray-300">{description}</p>
       </div>,
-      title
+      title,
+      <div className="flex gap-2 w-full">
+        <Link href={link}>
+          <Button variant="default" className="w-full">
+            Open project
+          </Button>
+        </Link>
+        <Link href={code}>
+          <Button variant="outline" className="w-full">
+            View Code
+          </Button>
+        </Link>
+      </div>
     );
   };
 

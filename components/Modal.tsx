@@ -3,19 +3,26 @@ interface ModalProps {
   onClose: () => void;
   children: React.ReactNode;
   title: string;
+  footer?: React.ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
+const Modal: React.FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  children,
+  title,
+  footer,
+}) => {
   if (!isOpen) return null;
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 ${
+      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/50 overflow-hidden ${
         isOpen ? "" : "hidden"
       }`}
     >
-      <div className="relative p-4 w-full max-w-2xl">
-        <div className="relative bg-background rounded-lg shadow-sm">
+      <div className="relative w-full max-w-2xl h-[90vh] m-4">
+        <div className="absolute inset-0 flex flex-col bg-background rounded-lg shadow-sm">
           <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
               {title}
@@ -42,7 +49,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
               <span className="sr-only">Close modal</span>
             </button>
           </div>
-          <div className="p-4 md:p-5">{children}</div>
+          <div className="flex-1 overflow-y-auto p-4 md:p-5">{children}</div>
+          {footer && (
+            <div className="flex items-center p-4 md:p-5 border-t dark:border-gray-600 border-gray-200 bg-background">
+              {footer}
+            </div>
+          )}
         </div>
       </div>
     </div>
