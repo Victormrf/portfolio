@@ -1,5 +1,6 @@
 import { CustomDock } from "@/components/CustomDock";
 import CustomTab from "@/components/CustomTab";
+import Footer from "@/components/Footer";
 import Intro from "@/components/Intro";
 import { Meteors } from "@/components/magicui/meteors";
 import Skills from "@/components/Skills";
@@ -12,6 +13,7 @@ export default function Home() {
         <Intro />
         <Skills />
         <CustomTab />
+        <Footer />
         <CustomDock orientation="vertical" />
       </main>
     </div>

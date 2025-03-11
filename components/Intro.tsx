@@ -1,12 +1,15 @@
 import Image from "next/image";
-import ProfilePic from "@/app/images/profile_picture.jpg";
+import ProfilePic from "@/public/images/profile_picture.jpg";
 
 const Intro = () => {
   return (
     <div className="flex gap-4 flex-col-reverse sm:flex-row justify-center items-center">
       <div className="flex flex-col gap-4 md:w-9/12 sm:w-full">
-        <h1 className="text-4xl font-bold text-teal-800 dark:text-teal-300">
-          Hi! I&apos;m Victor.
+        <h1 className="text-4xl text-gray-800/80 dark:text-gray-100">
+          Hi! I&apos;m{" "}
+          <strong className="text-4xl font-bold text-teal-800 dark:text-teal-300">
+            Victor Fernandes
+          </strong>
         </h1>
         <p className="text-base text-gray-800 dark:text-gray-100">
           As a Software Engineer with 2+ years of experience, i have crafted

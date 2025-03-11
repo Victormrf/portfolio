@@ -1,8 +1,11 @@
 "use client";
 
+import { ModalProvider } from "@/context/ModalContext";
+import { I18nextProvider } from "react-i18next";
+import i18n from "@/lib/i18n/config";
 import { ThemeProvider } from "next-themes";
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
+export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider
       attribute="class"
@@ -10,9 +13,9 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
       enableSystem
       disableTransitionOnChange
     >
-      {children}
+      <I18nextProvider i18n={i18n}>
+        <ModalProvider>{children}</ModalProvider>
+      </I18nextProvider>
     </ThemeProvider>
   );
-};
-
-export default Providers;
+}
