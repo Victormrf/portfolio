@@ -1,4 +1,6 @@
+import { SVGProps, FC } from "react";
+
 export interface Skill {
   name: string;
-  icon: string;
+  icon: FC<SVGProps<SVGSVGElement>>;
 }
