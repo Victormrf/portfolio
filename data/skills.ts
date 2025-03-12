@@ -13,12 +13,12 @@ import {
   DockerIcon,
   AWSIcon,
   KafkaIcon,
-  RestApiIcon,
   MongoDBIcon,
   ElasticsearchIcon,
   PostgreSQLIcon,
   MySQLIcon,
   GitIcon,
+  PostmanIcon,
 } from "./icons";
 import { Skill } from "@/types/skill";
 
@@ -42,5 +42,5 @@ export const skillsData: Skill[] = [
   { name: "Docker", icon: DockerIcon },
   { name: "AWS", icon: AWSIcon },
   { name: "Apache Kafka", icon: KafkaIcon },
-  { name: "RESTful APIs", icon: RestApiIcon },
+  { name: "Postman", icon: PostmanIcon },
 ];
