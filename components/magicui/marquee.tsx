@@ -83,7 +83,14 @@ export function Marquee({
 
       if (active) {
         const contentWidth = containerRef.current?.scrollWidth || 0;
-        setDragOffset(x % contentWidth); // Allow full content width dragging
+        const newDragOffset = x % contentWidth;
+
+        // Prevent dragging beyond the origin (left limit)
+        if (baseOffset + newDragOffset > 0) {
+          setDragOffset(0); // Reset to origin
+        } else {
+          setDragOffset(newDragOffset); // Allow dragging within limits
+        }
       } else {
         setBaseOffset((prev) => prev + dragOffset);
         setDragOffset(0);

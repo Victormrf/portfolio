@@ -25,11 +25,11 @@ import { Skill } from "@/types/skill";
 export const skillsData: Skill[] = [
   { name: "JavaScript", icon: JavaScriptIcon },
   { name: "TypeScript", icon: TypeScriptIcon },
+  { name: "Node.js", icon: NodeIcon },
   { name: "Python", icon: PythonIcon },
   { name: "Go", icon: GoIcon },
   { name: "HTML", icon: HTMLIcon },
   { name: "CSS", icon: CSSIcon },
-  { name: "Node.js", icon: NodeIcon },
   { name: "Nest.js", icon: NestIcon },
   { name: "Express", icon: ExpressIcon },
   { name: "React", icon: ReactIcon },
