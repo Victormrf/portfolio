@@ -41,7 +41,11 @@ const ProjectCard = ({
             </div>
           ))}
         </div>
-        <p className="mt-4 text-gray-700 dark:text-gray-300">{description}</p>
+        <ul className="list-disc pl-4 text-gray-700 dark:text-gray-300">
+          {description.map((desc, index) => (
+            <li key={index}>{desc}</li>
+          ))}
+        </ul>
       </div>,
       title,
       <div className="flex gap-2 w-full">

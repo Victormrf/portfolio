@@ -77,4 +77,14 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  ul li::marker {
+    color: #4d7e7a;
+    font-size: 1.2em; /* Adjust bullet size */
+  }
+
+  /* Dark mode styles for bullets */
+  .dark ul li::marker {
+    color: #224d62;
+  }
 }

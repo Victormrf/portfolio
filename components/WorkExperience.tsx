@@ -23,11 +23,11 @@ const WorkExperience = () => {
               <h3 className="text-lg font-semibold text-teal-800 dark:text-teal-300">
                 {item.jobTitle} at {item.companyName}
               </h3>
-              <ol className="text-base text-gray-800 dark:text-gray-100">
+              <ul className="list-disc pl-5 text-base text-gray-800 dark:text-gray-100">
                 {item.description.map((desc, index) => (
                   <li key={index}>{desc}</li>
                 ))}
-              </ol>
+              </ul>
             </li>
           ))}
         </ol>

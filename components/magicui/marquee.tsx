@@ -39,7 +39,7 @@ export function Marquee({
   pauseOnHover = false,
   children,
   vertical = false,
-  repeat = 10,
+  repeat = 2,
   ...props
 }: MarqueeProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -56,12 +56,13 @@ export function Marquee({
           const step = reverse ? 1 : -1;
           const newOffset = prev + step;
           const contentWidth = containerRef.current?.scrollWidth || 0;
+          const containerWidth = containerRef.current?.clientWidth || 0;
 
-          // Instead of resetting immediately, check if we've gone past the full content width
-          if (reverse) {
-            return Math.abs(newOffset) >= contentWidth ? 0 : newOffset;
+          // Reset to 0 if the end of the content reaches the end of the container
+          if (Math.abs(newOffset) >= contentWidth - containerWidth) {
+            return 0;
           } else {
-            return Math.abs(newOffset) >= contentWidth ? 0 : newOffset;
+            return newOffset;
           }
         });
       };
@@ -83,11 +84,19 @@ export function Marquee({
 
       if (active) {
         const contentWidth = containerRef.current?.scrollWidth || 0;
+        const containerWidth = containerRef.current?.clientWidth || 0;
         const newDragOffset = x % contentWidth;
 
-        // Prevent dragging beyond the origin (left limit)
-        if (baseOffset + newDragOffset > 0) {
-          setDragOffset(0); // Reset to origin
+        // Calculate the potential new position
+        const potentialOffset = baseOffset + newDragOffset;
+
+        // Prevent dragging beyond the origin or the limit (left & right limit)
+        if (
+          potentialOffset > 0 ||
+          Math.abs(potentialOffset) >= contentWidth - containerWidth
+        ) {
+          setBaseOffset(0); // Reset baseOffset to origin
+          setDragOffset(0); // Reset dragOffset to origin
         } else {
           setDragOffset(newDragOffset); // Allow dragging within limits
         }
