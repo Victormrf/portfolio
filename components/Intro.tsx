@@ -36,7 +36,7 @@ const Intro = () => {
           />
         </div>
       </div>
-      <Button className="mt-3 p-4 text-base">
+      <Button className="mt-3 p-4 text-base border-zinc-300 bg-background text-zinc-300 dark:border-zinc-600 dark:hover:border-teal-300 dark:text-zinc-600 dark:hover:text-teal-300">
         <Link href="/curriculum.pdf" download="Victormrf_cv.pdf">
           Download CV
         </Link>

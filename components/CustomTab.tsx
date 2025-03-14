@@ -34,7 +34,7 @@ const CustomTab = () => {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="mb-4 border-b border-gray-200 dark:border-gray-700">
+      <div className="mb-4 border-b border-gray-200 dark:border-zinc-600">
         <ul className="flex flex-wrap -mb-px text-2xl font-bold text-center">
           {tabs.map((tab) => (
             <li key={tab.id} className="me-2" role="presentation">
@@ -42,7 +42,7 @@ const CustomTab = () => {
                 className={`inline-block p-4 border-b-2 rounded-t-lg hover:text-teal-600 hover:border-teal-600 dark:hover:border-teal-100 dark:hover:text-teal-100 ${
                   activeTab === tab.id
                     ? "text-teal-800 border-teal-800 dark:text-teal-500 dark:border-teal-500"
-                    : "border-transparent text-gray-300 dark:text-gray-700"
+                    : "border-transparent text-gray-300 dark:text-zinc-600"
                 }`}
                 onClick={() => setActiveTab(tab.id)}
                 role="tab"
