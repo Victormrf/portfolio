@@ -85,7 +85,7 @@ const Skills = () => {
               >
                 {pages[currentPage]?.map((skill, index) => (
                   <div key={index}>
-                    <div className="h-24 w-48 group flex flex-col items-center justify-center gap-2 border-2 rounded-md p-4 text-sm border-gray-500/30 hover:border-teal-600 transition-colors duration-300 aspect-square">
+                    <div className="w-full h-24 group flex flex-col items-center justify-center gap-2 border-2 rounded-md p-4 text-sm border-gray-500/30 hover:border-teal-600 transition-colors duration-300 aspect-square">
                       <skill.icon className="w-8 h-8 sm:w-10 sm:h-10 text-gray-400/30 group-hover:text-teal-500 dark:group-hover:text-teal-400 transition-colors duration-300" />
                       <span className="text-xs sm:text-sm text-gray-500/30 group-hover:text-teal-500 dark:group-hover:text-teal-400 transition-colors duration-300">
                         {skill.name}
