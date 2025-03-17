@@ -12,11 +12,8 @@ const Skills = () => {
   // Updating itemsPerPage based on screen width
   useEffect(() => {
     const updateItemsPerPage = () => {
-      if (window.innerWidth < 640) {
-        setItemsPerPage(4);
-      }
       if (window.innerWidth < 1024) {
-        setItemsPerPage(6);
+        setItemsPerPage(4);
       } else {
         setItemsPerPage(10);
       }

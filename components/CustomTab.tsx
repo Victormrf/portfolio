@@ -16,7 +16,7 @@ const CustomTab = () => {
     // Check if window is defined (client-side)
     if (typeof window !== "undefined") {
       const handleResize = () => {
-        setIsMobile(window.innerWidth < 640);
+        setIsMobile(window.innerWidth < 5000);
       };
 
       // Set initial value

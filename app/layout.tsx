@@ -30,6 +30,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>{children}</Providers>
+        {/* Portal Root - Ensures elements using React Portals work properly */}
+        <div id="portal-root"></div>
       </body>
     </html>
   );
