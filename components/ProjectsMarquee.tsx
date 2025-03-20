@@ -6,8 +6,9 @@ import Link from "next/link";
 import { SquareArrowOutUpRight, Rocket } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
 import { Project } from "@/types/project";
-import { projectsData } from "@/data/projects";
 import { Button } from "./ui/button";
+import { useProjects } from "@/hooks/useProjects";
+import { useTranslation } from "react-i18next";
 
 const ProjectCard = ({
   title,
@@ -19,6 +20,7 @@ const ProjectCard = ({
   technologies,
 }: Project) => {
   const { openModal } = useModal();
+  const { t } = useTranslation();
 
   const handleOpenModal = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -51,13 +53,13 @@ const ProjectCard = ({
       <div className="flex gap-2 w-full">
         <Link href={link}>
           <Button variant="default" className="w-full">
-            View
+            {t("view")}
             <Rocket />
           </Button>
         </Link>
         <Link href={code}>
           <Button variant="outline" className="w-full">
-            Code
+            {t("code")}
             <svg viewBox="0 0 438.549 438.549">
               <path
                 fill="currentColor"
@@ -100,7 +102,7 @@ const ProjectCard = ({
             onClick={handleOpenModal}
             className="flex items-center gap-1 text-teal-800 dark:text-teal-300 underline"
           >
-            <span>Click here to see more</span>
+            <span>{t("clickHereToSeeMore")}</span>
             <SquareArrowOutUpRight className="w-4 h-4" />
           </Link>
         </div>
@@ -110,10 +112,11 @@ const ProjectCard = ({
 };
 
 export function ProjectsMarquee() {
+  const projects = useProjects();
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:40s]">
-        {projectsData.map((project, index) => (
+        {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
       </Marquee>

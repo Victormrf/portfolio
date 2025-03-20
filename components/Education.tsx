@@ -1,12 +1,13 @@
-import { educationData } from "@/data/educations";
+import { useEducation } from "@/hooks/useEducation";
 import Image from "next/image";
 
 const Education = () => {
+  const education = useEducation();
   return (
     <div className="flex flex-col gap-4">
       <div className="pl-3">
         <ol className="relative border-s border-teal-800/80 dark:border-cyan-900">
-          {educationData.map((item, index) => (
+          {education.map((item, index) => (
             <li className="mb-10 ms-8" key={index}>
               <div className="absolute w-10 h-10 bg-teal-800 rounded-full mt-1.5 -start-5 border border-teal-800 dark:border-cyan-700 dark:bg-cyan-700 flex items-center justify-center">
                 <Image

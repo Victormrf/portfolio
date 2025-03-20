@@ -6,10 +6,12 @@ import Education from "./Education";
 import Projects from "./Projects";
 import ContactMe from "./ContactMe";
 import Dropdown from "./Dropdown";
+import { useTranslation } from "react-i18next";
 
 const CustomTab = () => {
   const [activeTab, setActiveTab] = useState<string>("projects"); // Explicitly define type
   const [isMobile, setIsMobile] = useState(false); // Initialize with a fallback value
+  const { t } = useTranslation();
 
   // Update isMobile state on window resize (client-side only)
   useEffect(() => {
@@ -33,22 +35,22 @@ const CustomTab = () => {
   const tabs = [
     {
       id: "projects",
-      label: "Projects",
+      label: t("projectsTab"),
       content: <Projects />,
     },
     {
       id: "experience",
-      label: "Work Experience",
+      label: t("workExperienceTab"),
       content: <WorkExperience />,
     },
     {
       id: "education",
-      label: "Education",
+      label: t("educationTab"),
       content: <Education />,
     },
     {
       id: "contacts",
-      label: "Contacts",
+      label: t("contactsTab"),
       content: <ContactMe />,
     },
   ];
