@@ -108,7 +108,7 @@ export function CustomDock({
   const { resolvedTheme, setTheme } = useTheme();
   const [isMobile, setIsMobile] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [currentLang, setCurrentLang] = useState("en");
 
   const toggleLanguage = () => {
@@ -187,7 +187,7 @@ export function CustomDock({
                 </button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{currentLang.toUpperCase()}</p>
+                <p>{t("home")}</p>
               </TooltipContent>
             </Tooltip>
           </DockIcon>
