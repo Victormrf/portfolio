@@ -8,8 +8,8 @@ import {
   flip,
   shift,
 } from "@floating-ui/react";
-import { ChevronRight, ChevronDown } from "lucide-react"; // Import icons
 import Portal from "./Portal";
+import MenuIcon from "./MenuIcon";
 
 // Dropdown component
 const Dropdown = ({
@@ -44,11 +44,11 @@ const Dropdown = ({
       >
         {tabs.find((tab) => tab.id === activeTab)?.label}
         {/* Dropdown icon */}
-        {isOpen ? (
-          <ChevronDown className="w-6 h-6" /> // Arrow down when dropdown is open
-        ) : (
-          <ChevronRight className="w-6 h-6" /> // Arrow right when dropdown is closed
-        )}
+        <MenuIcon
+          className={`w-6 h-6 transition-colors duration-200 ${
+            isOpen ? "text-teal-600" : "text-teal-800 dark:text-teal-500"
+          }`}
+        />
       </button>
       {/* Render dropdown menu */}
       {isOpen && (
