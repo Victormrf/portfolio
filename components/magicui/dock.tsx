@@ -46,6 +46,28 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
     const mousex = useMotionValue(Infinity);
     const mousey = useMotionValue(Infinity);
 
+    const handleMouseMove = (e: React.MouseEvent) => {
+      if (orientation === "horizontal") {
+        mousex.set(e.clientX);
+      } else {
+        mousey.set(e.clientY);
+      }
+    };
+
+    const handleMouseLeave = (e: React.MouseEvent) => {
+      // Check if we're moving to a child element
+      const relatedTarget = e.relatedTarget as HTMLElement;
+      if (relatedTarget?.closest(".dock-container")) {
+        return;
+      }
+
+      if (orientation === "horizontal") {
+        mousex.set(Infinity);
+      } else {
+        mousey.set(Infinity);
+      }
+    };
+
     const renderChildren = () => {
       return React.Children.map(children, (child: any) => {
         return React.cloneElement(child, {

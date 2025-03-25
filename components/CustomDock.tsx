@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  CalendarIcon,
-  HomeIcon,
-  MailIcon,
-  Moon,
-  Globe,
-  Sun,
-} from "lucide-react";
+import { CalendarIcon, HomeIcon, MailIcon, Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { buttonVariants } from "@/components/ui/button";
@@ -21,7 +14,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { useTheme } from "next-themes";
-import { useTranslation } from "react-i18next";
+import Popover from "./Popover";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -108,14 +101,6 @@ export function CustomDock({
   const { resolvedTheme, setTheme } = useTheme();
   const [isMobile, setIsMobile] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { t, i18n } = useTranslation();
-  const [currentLang, setCurrentLang] = useState("en");
-
-  const toggleLanguage = () => {
-    const newLang = currentLang === "en" ? "pt" : "en";
-    i18n.changeLanguage(newLang);
-    setCurrentLang(newLang);
-  };
 
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768);
@@ -172,24 +157,7 @@ export function CustomDock({
             </DockIcon>
           ))}
           <DockIcon>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button
-                  onClick={toggleLanguage}
-                  className="size-12 rounded-full flex items-center justify-center hover:text-teal-500 dark:hover:text-teal-400"
-                >
-                  <Globe className="size-4 text-teal-600 dark:text-teal-500" />
-                  <span className="sr-only">
-                    {currentLang === "en"
-                      ? "Switch to Portuguese"
-                      : "Switch to English"}
-                  </span>
-                </button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{t("home")}</p>
-              </TooltipContent>
-            </Tooltip>
+            <Popover />
           </DockIcon>
           <Separator
             orientation={isMobile ? "vertical" : "horizontal"}
@@ -246,5 +214,3 @@ export function CustomDock({
     </div>
   );
 }
-
-// export default CustomDock;
